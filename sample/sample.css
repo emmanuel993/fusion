@@ -1,0 +1,428 @@
+body {
+  margin: 0;
+  font-family: 'Courier New', cursive;
+  background: black;
+  color: wheat;
+  text-align: center;
+  overflow-x: hidden;
+  padding-top: 70px;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 15px 30px;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  color: black;
+}
+
+/* NAV BAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  font-size: 16px;
+}
+
+/* HOVER UNDERLINE EFFECT */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 1px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ICON */
+.nav-icons .icon {
+  font-size: 18px;
+  cursor: pointer;
+  
+}
+
+/* SCROLL EFFECT (glass style) */
+.header.scrolled {
+  background: black;
+  backdrop-filter: blur(10px);
+}
+
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+
+/* HERO */
+.hero {
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.logo {
+  margin-bottom: 10px;
+  animation: fadeDown 1s ease;
+}
+.logo img {
+    height: 80px;
+    width: 100px;
+}
+
+
+.top-text {
+  font-style: italic;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+/* HERO IMAGE HOVER */
+.hero-image img {
+  width: 90%;
+  max-width: 400px;
+  transition: transform 0.6s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin: 20px 0;
+  opacity: 0;
+  animation: fadeUp 1.5s forwards;
+}
+
+.shop-btn {
+  padding: 10px 25px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.shop-btn:hover {
+  background: black;
+  color: white;
+  border: 1px solid white;
+  transform: scale(1.05);
+}
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.product {
+  position: relative;
+  overflow: hidden;
+}
+
+.product img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease;
+  z-index: 999;
+}
+
+/* CART DRAWER */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100%;
+  background: #111;
+  color: white;
+  padding: 20px;
+  transition: right 0.4s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ACTIVE STATES */
+.cart-drawer.active {
+  right: 0;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* CART HEADER */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* CART ITEMS */
+.cart-items {
+  flex: 1;
+  margin-top: 20px;
+  overflow-y: auto;
+}
+
+/* CHECKOUT BUTTON */
+.checkout-btn {
+  padding: 12px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background: black;
+  color: white;
+  border: 1px solid white;
+}
+
+/* HOVER ZOOM */
+.product:hover img {
+  transform: scale(1.1);
+}
+
+.tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: black;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* SUBSCRIBE */
+.subscribe {
+  background: #eee;
+  color: black;
+  padding: 40px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.subscribe h2 {
+  font-size: 28px;
+}
+
+.input-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.input-box input {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+  outline: none;
+  border-color: black;
+}
+
+.input-box button {
+  padding: 10px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.input-box button:hover {
+  transform: scale(1.1);
+}
+
+.cart-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+}
+
+.cart-info {
+  flex: 1;
+  text-align: left;
+}
+
+.qty-controls {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.qty-controls button {
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.remove {
+  cursor: pointer;
+  font-size: 14px;
+  color: red;
+}
+
+/* ANIMATION KEYFRAMES */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ABOUT PAGE */
+.about {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.about h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.about p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.abo{
+    list-style: none;
+}
+
+/* CONTACT PAGE */
+.contact {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.contact-sub {
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+/* LINKS */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: white;
+  border: 1px solid #333;
+  padding: 15px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+/* HOVER EFFECT */
+.contact-links a:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+}
