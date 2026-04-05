@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fashion fusion</title>
+  <link rel="stylesheet" href="sample.css">
+</head>
+<body>
+
+    <header class="header">
+  <div class="nav">
+
+    <!-- LOGO -->
+     <div class="logo"><img src="WhatsApp Image 2026-04-05 at 5.44.59 AM.jpeg" alt=""></div>
+
+    <!-- NAV LINKS -->
+    <ul class="nav-links">
+      <li><a href="sample.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- RIGHT SIDE -->
+   <div class="nav-icons">
+  <span class="icon" onclick="openCart()">🛒</span>
+  </div>
+>
+
+  </div>
+</header>
+
+<!-- OVERLAY -->
+<div class="overlay" onclick="closeCart()"></div>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <span class="close-btn" onclick="closeCart()">✕</span>
+  </div>
+
+ 
+  <div class="cart-items"></div>
+
+<div class="cart-footer">
+  <h3>Total: $<span id="total">0</span></h3>
+</div>
+
+  <button class="checkout-btn">Checkout</button>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero fade-in" >
+  <p class="top-text">10% Off after every single purchase!!!</p>
+
+  <div class="hero-image">
+    <img src="alexander-krivitskiy-RS_oMSPnzi4-unsplash.jpg" alt="model">
+  </div>
+
+  <h1>Where Culture Meets Couture.</h1>
+  <button class="shop-btn">Shop All</button>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products fade-in">
+  <div class="product">
+    <span class="tag">T-Shirt</span>
+    <img src="jj-jordan-K7UYVlmm0XU-unsplash.jpg">
+    <button onclick="addToCart('Black Shorts', 20, 'shorts1.jpg')"></button>
+  </div>
+
+  <div class="product">
+    <span class="tag">Caps</span>
+    <img src="jj-jordan-uwTB36znjzo-unsplash.jpg">
+    <button onclick="addToCart('Black Shorts', 20, 'shorts1.jpg')"></button>
+  </div>
+
+  <div class="product">
+    <span class="tag">Joggers</span>
+    <img src="jj-jordan-yA1wOZ9i67w-unsplash.jpg">
+    <button onclick="addToCart('Black Shorts', 20, 'shorts1.jpg')"></button>
+  </div>
+
+  <div class="product">
+    <span class="tag">Gym Wears</span>
+    <img src="skg-photography-O0AZdv71gCg-unsplash.jpg">
+    <button onclick="addToCart('Black Shorts', 20, 'shorts1.jpg')"></button>
+  </div>
+</section>
+
+<!-- EMAIL SECTION -->
+<section class="subscribe fade-in">
+  <h2>Subscribe to our emails</h2>
+  <p>Be the first to know about new collections and exclusive offers.</p>
+
+  <div class="input-box">
+    <input type="email" placeholder="Email">
+    <button onclick="subscribe()">→</button>
+  </div>
+</section>
+
+<script src="sample.js"></script>
+</body>
+</html>
